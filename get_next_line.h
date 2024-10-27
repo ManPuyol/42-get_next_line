@@ -6,7 +6,7 @@
 /*   By: manorteg <manorteg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 15:26:30 by manorteg          #+#    #+#             */
-/*   Updated: 2024/10/06 12:19:13 by manorteg         ###   ########.fr       */
+/*   Updated: 2024/10/27 10:06:51 by manorteg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #  define BUFFER_SIZE 10
 # endif
 # define MAX_FD 1024
-# define MAX_LINE_LENGTH 100000
+# define MAX_LINE_LENGTH 30000000
 
 # include <unistd.h>
 # include <stdlib.h>

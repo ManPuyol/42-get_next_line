@@ -6,7 +6,7 @@
 /*   By: manorteg <manorteg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 15:26:28 by manorteg          #+#    #+#             */
-/*   Updated: 2024/10/06 12:45:50 by manorteg         ###   ########.fr       */
+/*   Updated: 2024/10/27 10:31:15 by manorteg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ static int	read_line_from_fd(int fd, t_buffer *buffers, char *line)
 	int				line_pos;
 	char			c;
 
+	line_pos = 0;
 	while (line_pos < MAX_LINE_LENGTH - 1) //hasta que no acabe el archivo
 	{
 		if (buffers[fd].position >= buffers[fd].bytes_read) //si ya se leyó todo el buffer
@@ -55,16 +56,16 @@ char	*get_next_line(int fd)
 	return (next_line);
 }
 
-// int main (void)
-// {
-// 	int fd = open("/home/manorteg/francinette/tests/get_next_line/fsoares/giant_line.txt", O_RDONLY);
-// 	char *line;
+int main (void)
+{
+	int fd = open("/home/manorteg/francinette/tests/get_next_line/fsoares/giant_line.txt", O_RDONLY);
+	char *line;
 
-// 	while ((line = get_next_line(fd)))
-// 	{
-// 		printf("%s\n", line);
-// 		free(line);
-// 	}
-// 	close(fd);
-// 	return (0);
-// }
+	while ((line = get_next_line(fd)))
+	{
+		printf("%s\n", line);
+		free(line);
+	}
+	close(fd);
+	return (0);
+}
