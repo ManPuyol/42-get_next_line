@@ -6,7 +6,7 @@
 /*   By: manorteg <manorteg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 15:37:17 by manorteg          #+#    #+#             */
-/*   Updated: 2024/10/27 10:31:07 by manorteg         ###   ########.fr       */
+/*   Updated: 2024/10/27 12:53:28 by manorteg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,9 @@ char	*ft_strdup(const char *s)
 	int		len;
 
 	len = ft_strlen(s);
-	// printf("\n\nlen: %d\n\n", len);
 	str = (char *)malloc(sizeof(char) * len + 1);
 	if (!str)
-		return (NULL);
+		return (free(str), NULL);
 	i = 0;
 	while (s[i])
 	{
@@ -65,7 +64,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		return (NULL);
 	ptr = malloc(nmemb * size);
 	if (!ptr)
-		return (NULL);
+		return (free(ptr), NULL);
 	ft_memset(ptr, 0, nmemb * size);
 	return (ptr);
 }
